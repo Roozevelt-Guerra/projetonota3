@@ -1,7 +1,6 @@
 from usuarios import *
 from eventos import *
 
-
 def menuprincipal():
     print(f'\n MENU PRINCIPAL'
           f'\n 1 - Cadastro usuário'

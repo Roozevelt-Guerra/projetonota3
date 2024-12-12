@@ -1,4 +1,3 @@
-
 usuarios = {'rooz@': ['rooz', '123'], 'rai@': ['rai', '123']}
 eventos = {}
 proibidos = ['fe@']
@@ -11,22 +10,22 @@ def cadastro_us(usuarios):
     for chave in usuarios:
         if chave == email:
             print('email ja cadastrado')
-            menuprincipal()
+            return nome
     for proibido in proibidos:
         if proibido == email:
             print('Email bloqeado na plataforma')
-            menuprincipal()
+            return nome
 
     idade = int(input('Digite sua idade: '))
     if idade < 18:
         print('Voce não idade suficiente para acessar esse site ')
-        menuprincipal()
+        return nome
 
     senha = input('Digite a senha: ')
     r_senha = input('Repita a senha: ')
     if (senha != r_senha):
         print('senhas não coincidem. Tente novamente.')
-        menuprincipal()
+        return nome
 
     usuarios[email] = [nome,senha]
     print('cadastro efetuado com sucesso.')
@@ -45,7 +44,7 @@ def login(usuarios):
             print('Senha incorreta.')
     else:
         print('Email não encontrado.')
-    return menuprincipal()
+    return email
 
 def emais_proibidas(usuario, eventos):
     print('ADICIONAR EMAIL PROIBIDO')
