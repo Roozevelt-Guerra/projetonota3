@@ -1,0 +1,1 @@
+titulo: lala, participantes: ['rai', 'rooz']titulo: bio, participantes: ['lala']titulo: bio, participantes: ['rooz', 'lala']titulo: lala, participantes: ['muu', 'rerei', 'nois']
