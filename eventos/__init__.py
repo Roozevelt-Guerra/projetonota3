@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import qrcode
 
 def cadastrar_evento(usuario, eventos):
     print('CADASTRO DE EVENTO')
@@ -28,12 +29,13 @@ def remover_evento(usuario, eventos):
     titulo = input('Digite o titulo do evento a ser removido:')
     remover = []
     for chave in eventos:
-        if eventos[chave][4] == usuario[0] and eventos[chave][0] == titulo:
+        if eventos[chave][0] == titulo:
+            if usuario[0] in eventos[chave][4]:
                 remover.append(chave)
                 print('Evento removido com sucesso.')
-        else:
-            print('Voce não tem permissão para remover esse evento.')
-            break
+            else:
+                print('Voce não tem permissão para remover esse evento.')
+                break
     for chave in remover:
         eventos.pop(chave)
     print(eventos)
@@ -158,3 +160,14 @@ def grafico_participantes(eventos):
     plt.ylabel('Número de Participantes')
     plt.title('Número de Participantes por Evento')
     plt.show()
+
+def qr_code(usuarios):
+    nome= input('Digite o Email que voce utilizou no cadastro: ')
+    for chave in usuarios:
+        if usuarios[chave][0] == nome:
+            git = qrcode.make("https://github.com/rai070107/projeto3unidade.git")
+            git.save("Qrcode git.jpg")
+            print('Visite o nosso git e veja como os codigos da plataforma fuciona')
+            break
+        else:
+            print('nome não encontrado')
