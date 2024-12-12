@@ -36,7 +36,6 @@ while True:
                       f'\n 13 - Adicionar email a lista de proibidos'
                       f'\n 14 - Remover email da lista de proibidos'
                       f'\n 15 - listar emails proibidos'
-                      f'\n 16 _ Qr code do codigo no git'
                       f'\n 0 - Sair do Submenu')
                 op = input('Digite a opção: ')
                 if op == '1':
@@ -69,8 +68,6 @@ while True:
                     remover_email_proibido(usuario_logado,eventos)
                 elif op == '15':
                     listar_proibidos(usuario_logado, eventos)
-                elif op == '16':
-                    qr_code()
                 elif op == '0':
                     print('Voltando ao menu principal')
                 else:

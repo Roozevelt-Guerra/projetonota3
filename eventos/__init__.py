@@ -158,13 +158,3 @@ def grafico_participantes(eventos):
     plt.ylabel('Número de Participantes')
     plt.title('Número de Participantes por Evento')
     plt.show()
-
-def qr_code():
-    nome= input('Digite o Email que voce utilizou no cadastro: ')
-    for chave in usuarios:
-        if usuarios[chave][0] == nome:
-            git = qrcode.make("https://github.com/rai070107/projeto3unidade.git")
-            git.save("primeiro_qrcode.jpg")
-            print('Visite o nosso git e veja como os codigos da plataforma fuciona')
-        else:
-            print('nome não encontrado')
